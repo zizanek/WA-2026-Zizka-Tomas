@@ -14,7 +14,7 @@
             <ul>
                 <!-- Poznámka: do odkazu href se musí dát reálná absolutní/úplná cesta k souboru index.php -->
                 <li><a href="/WA-2026-Zizka-Tomas/SkupinaB/BooksApp-SkB/public/index.php">Seznam knih (Domů)</a></li>
-                <li><a href="WA-2026-Zizka-Tomas/SkupinaB/BooksApp-SkB/public/index.php?url=book/create">Přidat novou knihu</a></li>
+                <li><a href="/WA-2026-Zizka-Tomas/SkupinaB/BooksApp-SkB/public/index.php?url=book/create">Přidat novou knihu</a></li>
             </ul>
         </nav>
     </header>
