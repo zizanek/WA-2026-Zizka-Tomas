@@ -10,4 +10,16 @@ class BookController {
         // Nyní se pouze načte (vloží) připravený soubor s HTML strukturou
         require_once '../app/views/books/books_list.php';
     }
+
+
+    // 1. Zobrazení formuláře pro přidání nové knihy
+    public function create() {
+        // Zde se pouze načte (vloží) připravený soubor s HTML formulářem
+        require_once '../app/views/books/book_create.php';
+    }
+
+
+
+
+
 }
