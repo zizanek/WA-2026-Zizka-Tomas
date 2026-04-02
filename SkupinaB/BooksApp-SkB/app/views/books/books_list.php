@@ -45,7 +45,9 @@
                             <td><?= htmlspecialchars($book['year']) ?></td>
                             <td><?= htmlspecialchars($book['price']) ?> Kč</td>
                             <td>
-                                <a href="<?= BASE_URL ?>/index.php?url=book/show/<?= $book['id'] ?>">Detail</a>
+                                <a href="<?= BASE_URL ?>/index.php?url=book/show/<?= $book['id'] ?>">Detail</a> | 
+                                <a href="<?= BASE_URL ?>/index.php?url=book/edit/<?= $book['id'] ?>">Upravit</a> | 
+                                <a href="<?= BASE_URL ?>/index.php?url=book/delete/<?= $book['id'] ?>" onclick="return confirm('Opravdu chcete tuto knihu smazat?')">Smazat</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
