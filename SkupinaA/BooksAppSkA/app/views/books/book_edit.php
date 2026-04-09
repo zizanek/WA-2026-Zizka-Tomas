@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="cs" class="h-full">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <title>Upravit knihu</title>
-</head>
-<body class="bg-[#1a1c1e] text-slate-200 min-h-screen font-sans flex flex-col">
-
-    <header class="bg-gradient-to-b from-slate-700 to-slate-900 border-b border-slate-600 shadow-xl">
-        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
-            <h1 class="text-2xl font-bold tracking-tight text-white uppercase italic">
-                Aplikace <span class="text-blue-400">Knihovna</span>
-            </h1>
-            
-            <nav class="mt-4 md:mt-0">
-                <ul class="flex space-x-6">
-                    <li>
-                        <a href="<?= BASE_URL ?>/index.php" class="hover:text-blue-400 transition-colors font-medium">Seznam knih</a>
-                    </li>
-                    <li>
-                        <a href="<?= BASE_URL ?>/index.php?url=book/create" class="bg-slate-600 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-all shadow-inner border border-slate-500">
-                            + Přidat knihu
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<?php require_once '../app/views/layout/header.php'; ?>    
 
     <main class="container mx-auto px-6 py-10 flex-grow">
         
@@ -133,9 +104,4 @@
         </div>
     </main>
 
-    <footer class="mt-auto border-t border-slate-800 py-8 text-center bg-[#1a1c1e]">
-        <p class="text-slate-600 text-sm tracking-widest uppercase italic">&copy; WA 2026 - Výukový projekt v kovovém stylu</p>
-    </footer>
-
-</body>
-</html>
+<?php require_once '../app/views/layout/footer.php'; ?>    
