@@ -120,12 +120,12 @@
                 } else if (files.length === 1) {
                     // Vybrán 1 soubor - ukážeme jeho název
                     fileTitle.textContent = 'Soubor připraven';
-                    fileTitle.className = 'text-sm text-blue-400 font-bold';
+                    fileTitle.className = 'text-sm text-emerald-400 font-bold';
                     fileInfo.textContent = files[0].name;
                 } else {
                     // Vybráno více souborů - ukážeme počet
                     fileTitle.textContent = 'Soubory připraveny';
-                    fileTitle.className = 'text-sm text-blue-400 font-bold';
+                    fileTitle.className = 'text-sm text-emerald-400 font-bold';
                     fileInfo.textContent = 'Vybráno celkem: ' + files.length + ' souborů';
                 }
             });
