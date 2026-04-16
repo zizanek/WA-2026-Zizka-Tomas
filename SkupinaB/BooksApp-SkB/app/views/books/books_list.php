@@ -1,9 +1,9 @@
-<?php require_once '../app/views/layout/header.php'; ?>
+<?php require_once '../app/views/layout/header.php'; ?>    
 
     <main class="container mx-auto px-6 py-10">
         
         <div class="flex justify-between items-end mb-6">
-            <h2 class="text-3xl font-light tracking-widest text-slate-400 uppercase">Dostupné knihy</h2>
+            <h2 class="text-3xl font-light tracking-widest text-slate-200 uppercase">Dostupné knihy</h2>
         </div>
         
         <div class="bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden shadow-2xl backdrop-blur-sm">
@@ -16,12 +16,12 @@
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr class="bg-slate-700/50 border-b border-slate-600">
-                                <th class="px-6 py-4 font-semibold uppercase text-xs text-slate-400 tracking-wider text-center">ID</th>
-                                <th class="px-6 py-4 font-semibold uppercase text-xs text-slate-400 tracking-wider">Název knihy</th>
-                                <th class="px-6 py-4 font-semibold uppercase text-xs text-slate-400 tracking-wider">Autor</th>
-                                <th class="px-6 py-4 font-semibold uppercase text-xs text-slate-400 tracking-wider">Rok</th>
-                                <th class="px-6 py-4 font-semibold uppercase text-xs text-slate-400 tracking-wider text-right">Cena</th>
-                                <th class="px-6 py-4 font-semibold uppercase text-xs text-slate-400 tracking-wider text-center">Akce</th>
+                                <th class="px-6 py-4 font-semibold uppercase text-xs text-slate-200 tracking-wider text-center">ID</th>
+                                <th class="px-6 py-4 font-semibold uppercase text-xs text-slate-200 tracking-wider">Název knihy</th>
+                                <th class="px-6 py-4 font-semibold uppercase text-xs text-slate-200 tracking-wider">Autor</th>
+                                <th class="px-6 py-4 font-semibold uppercase text-xs text-slate-200 tracking-wider">Rok</th>
+                                <th class="px-6 py-4 font-semibold uppercase text-xs text-slate-200 tracking-wider text-right">Cena</th>
+                                <th class="px-6 py-4 font-semibold uppercase text-xs text-slate-200 tracking-wider text-center">Akce</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-700">
@@ -48,4 +48,4 @@
         </div>
     </main>
 
-<?php require_once '../app/views/layout/footer.php'; ?>
+<?php require_once '../app/views/layout/footer.php'; ?>    
