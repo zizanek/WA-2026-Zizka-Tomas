@@ -22,6 +22,21 @@ class BookController {
 
 
     // 1. Zobrazení formuláře pro přidání nové knihy
+    public function create_zaloha() {
+        // !!! ZMĚNA: Autorizace: Pokud uživatel není přihlášen, nemá tu co dělat
+        if (!isset($_SESSION['user_id'])) {
+            $this->addErrorMessage('Pro přidání knihy se musíte nejprve přihlásit.');
+            header('Location: ' . BASE_URL . '/index.php?url=auth/login');
+            exit;
+        }
+        
+        
+        // Zde se pouze načte (vloží) připravený soubor s HTML formulářem
+        require_once '../app/views/books/book_create.php';
+    }
+
+
+    // 1. Zobrazení formuláře pro přidání nové knihy
     public function create() {
         // !!! ZMĚNA: Autorizace: Pokud uživatel není přihlášen, nemá tu co dělat
         if (!isset($_SESSION['user_id'])) {
@@ -30,6 +45,19 @@ class BookController {
             exit;
         }
         
+        // ZMĚNA: Načtení databáze a nového modelu Category
+        require_once '../app/models/Database.php';
+        require_once '../app/models/Category.php';
+
+        $database = new Database();
+        $db = $database->getConnection();
+
+        // ZMĚNA: Získání seznamu kategorií
+        $categoryModel = new Category($db);
+        $categories = $categoryModel->getAllCategories();
+
+
+
         
         // Zde se pouze načte (vloží) připravený soubor s HTML formulářem
         require_once '../app/views/books/book_create.php';
@@ -53,7 +81,9 @@ class BookController {
             $title = htmlspecialchars($_POST['title'] ?? '');
             $author = htmlspecialchars($_POST['author'] ?? '');
             $isbn = htmlspecialchars($_POST['isbn'] ?? '');
-            $category = htmlspecialchars($_POST['category'] ?? '');
+            // $category = htmlspecialchars($_POST['category'] ?? '');
+            $category = (int)($_POST['category'] ?? 0);
+            
             $subcategory = htmlspecialchars($_POST['subcategory'] ?? '');
             
             // U číselných hodnot se provádí explicitní přetypování
@@ -183,9 +213,14 @@ class BookController {
         // Načtení potřebných tříd a spojení s databází
         require_once '../app/models/Database.php';
         require_once '../app/models/Book.php';
+        require_once '../app/models/Category.php';
 
         $database = new Database();
         $db = $database->getConnection();
+
+        // ZMĚNA: Získání seznamu kategorií
+        $categoryModel = new Category($db);
+        $categories = $categoryModel->getAllCategories();
 
         // Získání dat o konkrétní knize
         $bookModel = new Book($db);
@@ -255,7 +290,9 @@ class BookController {
             $title = htmlspecialchars($_POST['title'] ?? '');
             $author = htmlspecialchars($_POST['author'] ?? '');
             $isbn = htmlspecialchars($_POST['isbn'] ?? '');
-            $category = htmlspecialchars($_POST['category'] ?? '');
+            // $category = htmlspecialchars($_POST['category'] ?? '');
+            $category = (int)($_POST['category'] ?? 0);
+
             $subcategory = htmlspecialchars($_POST['subcategory'] ?? '');
             
             // Přetypování číselných hodnot
